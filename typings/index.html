@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System js</title>
+</head>
+<body>
+    <script src="https://npmcdn.com/systemjs@0.20.19/dist/system.src.js"></script>
+    <script>
+        System.config({
+            packages: {
+                "dist": {
+                    "defaultExtension": 'js',
+                    "main": 'app'
+                },
+                "rxjs": {
+                    "defaultExtension": 'js'
+                }
+            },
+            map: {
+                "lodash": "https://unpkg.com/lodash@4.17.4/lodash.js",
+                "rxjs": "node_modules/rxjs"
+            }
+        });
+
+        System.import("dist");
+    </script>
+</body>
+</html>
